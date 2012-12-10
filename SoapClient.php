@@ -11,20 +11,20 @@ class Misc_SoapClient
     {
         /*
         <xs:Return>
-            <xs:Company>
+            <xs1:Company>
                 <xs1:Name>
                     <xs1:Short>ATC</xs1:Short>
                     <xs1:Long>All Things Code</xs1:Long>
                 </xs1:Name>
-            </xs:Company>
+            </xs1:Company>
 
-            <xs:Customer>
+            <xs2:Customer>
                 <xs2:Name>
                     <xs2:First>John</xs2:First>
                     <xs2:Middle>C</xs2:Middle>
                     <xs2:Last>Doe</xs2:Last>
                 </xs2:Name>
-            </xs:Customer>
+            </xs2:Customer>
         </xs:Return>
         */
 
