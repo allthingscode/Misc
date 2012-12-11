@@ -10,6 +10,8 @@ class Misc_SoapClient
     public static function getDataFromRemoteService()
     {
         /*
+        This is the return object that comes back from the Soap method.
+        
         <xs:Return>
             <xs1:Company>
                 <xs1:Name>
@@ -33,12 +35,13 @@ class Misc_SoapClient
         //   The PHP SoapClient library is not able to differentiate between
         //   multiple entities with the same name and different namespaces.
 
+        // This classmap has 2 elements for "Name", so does not work as intended.
         $classMap = array(
             'Return'   => 'Misc_SoapClient_ValueObjects_Return',
             'Company'  => 'Misc_SoapClient_ValueObjects_Return_Company',
-            'Name'     => 'Misc_SoapClient_ValueObjects_Return_Company_Name',
+            'Name'     => 'Misc_SoapClient_ValueObjects_Return_Company_Name',   // Company Name
             'Customer' => 'Misc_SoapClient_ValueObjects_Return_Customer',
-            'Name'     => 'Misc_SoapClient_ValueObjects_Return_Customer_Name'
+            'Name'     => 'Misc_SoapClient_ValueObjects_Return_Customer_Name'   // Customer Name
             );
         $soapClientOptions = array(
             'classmap'       => $classMap,
@@ -50,7 +53,7 @@ class Misc_SoapClient
             );
         $mySoapClient = new SoapClient( 'wsdl.xml', $soapClientOptions );
 
-        // Returns a "xs:Return" element
+        // Returns an "xs:Return" element
         $retrievedData = $mySoapClient->getData();
 
 
